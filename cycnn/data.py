@@ -111,7 +111,7 @@ def load_data(dataset='cifar10', data_dir='./data', batch_size=128):
     elif  dataset == 'svhn':
         train_set, test_set = load_svhn_data(data_dir=data_dir, batch_size=batch_size)
         
-    elif dataset == "fashionmnist":
+    elif dataset == 'fashionmnist':
         train_set, test_set = load_fashionmnist_data(data_dir=data_dir, batch_size=batch_size)
 
     """Give 10% of the train set to validation set"""
