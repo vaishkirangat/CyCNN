@@ -25,6 +25,23 @@ def load_mnist_data(data_dir='./data', batch_size=128):
 
     return train_set, test_set
 
+def load_fashionmnist_data(data_dir='./data', batch_size=128):
+
+    train_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+    ])
+
+    test_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Normalize((0.1307,), (0.3081,))
+    ])
+
+    train_set = torchvision.datasets.FashionMNIST(root=data_dir, train=True, download=True, transform=train_transform)
+    test_set = torchvision.datasets.FashionMNIST(root=data_dir, train=False, download=True, transform=test_transform)
+
+    return train_set, test_set
+
 def load_cifar10_data(data_dir='./data', batch_size=128):
 
     train_transform = transforms.Compose([
