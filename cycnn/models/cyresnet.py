@@ -105,30 +105,30 @@ class CyResNet(nn.Module):
 
 
 def cyresnet20(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [3, 3, 3], dataset=dataset, num_classes=num_classes)
 
 
 def cyresnet32(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [5, 5, 5], dataset=dataset, num_classes=num_classes)
 
 
 def cyresnet44(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [7, 7, 7], dataset=dataset, num_classes=num_classes)
 
 
 def cyresnet56(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [9, 9, 9], dataset=dataset, num_classes=num_classes)
 
 
 def cyresnet110(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [18, 18, 18], dataset=dataset, num_classes=num_classes)
 
 
 def cyresnet1202(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return CyResNet(BasicBlock, [200, 200, 200], dataset=dataset, num_classes=num_classes)
