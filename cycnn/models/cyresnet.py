@@ -67,11 +67,11 @@ class BasicBlock(nn.Module):
 
 
 class CyResNet(nn.Module):
-    def __init__(self, block, num_blocks, dataset='mnist', num_classes=10):
+    def __init__(self, block, num_blocks, dataset='fashionmnist', num_classes=10):
         super(CyResNet, self).__init__()
         self.in_planes = 16
 
-        in_channels = 1 if dataset == 'mnist' else 3
+        in_channels = 1 if dataset == 'fashionmnist' else 3
 
         """CyConv2d instead of nn.Conv2d"""
         self.conv1 = CyConv2d(in_channels, 16, kernel_size=3, stride=1, padding=1)
@@ -104,31 +104,31 @@ class CyResNet(nn.Module):
 
 
 
-def cyresnet20(dataset='mnist'):
+def cyresnet20(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [3, 3, 3], dataset=dataset, num_classes=num_classes)
 
 
-def cyresnet32(dataset='mnist'):
+def cyresnet32(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [5, 5, 5], dataset=dataset, num_classes=num_classes)
 
 
-def cyresnet44(dataset='mnist'):
+def cyresnet44(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [7, 7, 7], dataset=dataset, num_classes=num_classes)
 
 
-def cyresnet56(dataset='mnist'):
+def cyresnet56(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [9, 9, 9], dataset=dataset, num_classes=num_classes)
 
 
-def cyresnet110(dataset='mnist'):
+def cyresnet110(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [18, 18, 18], dataset=dataset, num_classes=num_classes)
 
 
-def cyresnet1202(dataset='mnist'):
+def cyresnet1202(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return CyResNet(BasicBlock, [200, 200, 200], dataset=dataset, num_classes=num_classes)
