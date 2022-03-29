@@ -97,30 +97,30 @@ class ResNet(nn.Module):
 
 
 def resnet20(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [3, 3, 3], dataset=dataset, num_classes=num_classes)
 
 
 def resnet32(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [5, 5, 5], dataset=dataset, num_classes=num_classes)
 
 
 def resnet44(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [7, 7, 7], dataset=dataset, num_classes=num_classes)
 
 
 def resnet56(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [9, 9, 9], dataset=dataset, num_classes=num_classes)
 
 
 def resnet110(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [18, 18, 18], dataset=dataset, num_classes=num_classes)
 
 
 def resnet1202(dataset='fashionmnist'):
-    num_classes = 100 if dataset == 'cifar100' else 10
+    num_classes = 100 if dataset == 'fashionmnist' else 10
     return ResNet(BasicBlock, [200, 200, 200], dataset=dataset, num_classes=num_classes)
