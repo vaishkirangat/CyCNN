@@ -61,11 +61,11 @@ class BasicBlock(nn.Module):
 
 
 class ResNet(nn.Module):
-    def __init__(self, block, num_blocks, dataset='mnist', num_classes=10):
+    def __init__(self, block, num_blocks, dataset='fashionmnist', num_classes=10):
         super(ResNet, self).__init__()
         self.in_planes = 16
 
-        in_channels = 1 if dataset == 'mnist' else 3
+        in_channels = 1 if dataset == 'fashionmnist' else 3
 
         self.conv1 = nn.Conv2d(in_channels, 16, kernel_size=3, stride=1, padding=1, bias=False)
         self.bn1 = nn.BatchNorm2d(16)
@@ -96,31 +96,31 @@ class ResNet(nn.Module):
         return out
 
 
-def resnet20(dataset='mnist'):
+def resnet20(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [3, 3, 3], dataset=dataset, num_classes=num_classes)
 
 
-def resnet32(dataset='mnist'):
+def resnet32(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [5, 5, 5], dataset=dataset, num_classes=num_classes)
 
 
-def resnet44(dataset='mnist'):
+def resnet44(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [7, 7, 7], dataset=dataset, num_classes=num_classes)
 
 
-def resnet56(dataset='mnist'):
+def resnet56(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [9, 9, 9], dataset=dataset, num_classes=num_classes)
 
 
-def resnet110(dataset='mnist'):
+def resnet110(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [18, 18, 18], dataset=dataset, num_classes=num_classes)
 
 
-def resnet1202(dataset='mnist'):
+def resnet1202(dataset='fashionmnist'):
     num_classes = 100 if dataset == 'cifar100' else 10
     return ResNet(BasicBlock, [200, 200, 200], dataset=dataset, num_classes=num_classes)
